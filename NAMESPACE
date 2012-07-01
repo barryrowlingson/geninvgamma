@@ -1,0 +1,3 @@
+export(dgigamma)
+export(pgigamma)
+export(qgigamma)

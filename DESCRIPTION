@@ -1,0 +1,9 @@
+Package: geninvgamma
+Title: Generalized Inverse Gamma Distribution Functions
+Description: density, etc for the generalized inverse gamma distribution.
+Version: 0.1
+Maintainer: Barry Rowlingson <b.rowlingson@gmail.com>
+Author: Barry Rowlingson <b.rowlingson@gmail.com>
+License: MIT
+Collate:
+    'dgigamma.R'
