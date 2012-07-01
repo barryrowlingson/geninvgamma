@@ -38,6 +38,8 @@ pgigamma = Vectorize(.base_pgigamma)
     pgigamma(f,alpha=alpha,beta=beta,gamma=gamma,mu=mu)-p
   }
 
+  ## we know 0 the lower bound is okay, so lets just find
+  ## any old upper bound where the function is positive
   upper = 2
   while(pf(upper)<0){
     upper=upper*2
@@ -57,3 +59,20 @@ pgigamma = Vectorize(.base_pgigamma)
 #' @export
 
 qgigamma = Vectorize(.base_qgigamma)
+
+#' random numbers from the generalized inverse gamma
+#'
+#' works by generating uniforms and looking up from the
+#' quantile function.
+#' 
+#' @param n how many
+#' @param alpha alpha parameter
+#' @param beta beta parameter
+#' @param gamma gamma parameter
+#' @param mu mu parameter
+#' @export
+
+rgigamma <- function(n,alpha,beta,gamma=1,mu=0){
+  x = runif(n,0,1)
+  return(qgigamma(x,alpha,beta,gamma,mu))
+}
